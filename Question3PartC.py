@@ -7,17 +7,26 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-parser = argparse.ArgumentParser()
-parser.add_argument("--input", help = "Input CSV file")
-parser.add_argument("--output", help = "Output plot filename")
-args = parser.parse_args()
+input_file = input("Enter the input filename: ")
+output_file = input("Enter the output plot filename: ")
 
-df = pd.read_csv(args.input, sep=r'\s+')
+
+plot_title = input("Enter the plot title: ")
+x_label = input("Enter the x-axis title: ")
+y_label = input("Enter the y-axis title: ")
+
+
+df = pd.read_csv(input_file, sep=r'\s+')
 
 sns.scatterplot(
     data=df,
     x="position_mb",
-    y="log2_ratio",
+    y="log2_ratio"
 )
-plt.savefig(args.output)
+
+plt.title(plot_title)
+plt.xlabel(x_label)
+plt.ylabel(y_label)
+
+plt.savefig(output_file)
 plt.show()

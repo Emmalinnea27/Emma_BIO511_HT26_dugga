@@ -2,6 +2,7 @@
 ## Comments not to be interpreted as pseudocode (I know they are far too long), rather as evidence of my full understanding of this Python Module
 ## Thank You :)
 
+
 # PART 1- A
 # This variable type is a string, strings are immutable. Contains letter information (like my name)
 my_name  = "emma"
